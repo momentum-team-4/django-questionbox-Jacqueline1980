@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
+from questionboxapp import views as questionbox
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', questionbox.questionbox, name='home')
 ]
 
 if settings.DEBUG:
