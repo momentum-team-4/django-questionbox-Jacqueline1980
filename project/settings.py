@@ -47,9 +47,11 @@ INSTALLED_APPS = [
     # Third-party
     'debug_toolbar',
     'django_extensions',
+    'markdownify',
 
     # Project-specific
     'users',
+    'questionboxapp',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,7 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
+
+import django_heroku
+django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
